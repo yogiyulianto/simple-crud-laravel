@@ -83,7 +83,8 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Employee::where('id', $id)->update($request->all());
+        return redirect('employee');
     }
     /**
      * Remove the specified resource from storage.
